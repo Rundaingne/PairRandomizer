@@ -19,7 +19,7 @@ class EntityController {
     //It is from this array that we will pull our data. We'll use the shuffle method here.
     
     //create and delete functions, with respect to CloudKit.
-    func createEntity(name: String, bodyText: String?, timestamp: Date?, grouping: String, completion: @escaping (Entity?) -> Void) {
+    func createEntity(name: String, grouping: String, completion: @escaping (Entity?) -> Void) {
         //All we gotta do is call our save function in here. Nifty.
         saveEntity(name: name, grouping: grouping, completion: completion)
     }
@@ -38,6 +38,7 @@ class EntityController {
     
     func saveEntity(name: String, grouping: String, completion: @escaping (Entity?) -> Void) {
         let entity = Entity(name: name, grouping: grouping)
+        self.entities.append(entity)
         let record = CKRecord(entity: entity)
         CKContainer.default().publicCloudDatabase.save(record) { (ckRecord, error) in
             if let error = error {
@@ -47,7 +48,6 @@ class EntityController {
             }
             guard let ckRecord = ckRecord,
             let entity = Entity(ckRecord: ckRecord) else {completion(nil); return}
-            self.entities.append(entity)
             completion(entity)
         }
     }
@@ -62,10 +62,12 @@ class EntityController {
                 completion(nil)
                 return
             }
-            guard let records = records else {completion(nil); return}
-            let entities = records.compactMap{Entity(ckRecord: $0)}
-            self.entities = entities
-            completion(entities)
+            DispatchQueue.main.async {
+                guard let records = records else {completion(nil); return}
+                let entities = records.compactMap{Entity(ckRecord: $0)}
+                self.entities = entities
+                completion(entities)
+            }
         }
     }
     

@@ -29,10 +29,10 @@ class Entity {
     
     //Need an init to convert from record to entity. Which I need a struct of constants for this.
     convenience init?(ckRecord: CKRecord) {
-        guard let name = ckRecord[EntityConstants.nameKey] as? String,
-        let bodyText = ckRecord[EntityConstants.bodyTextKey] as? String,
-        let timestamp = ckRecord[EntityConstants.timestampKey] as? Date,
-            let grouping = ckRecord[EntityConstants.groupingKey] as? String else {return nil}
+        guard let name = ckRecord[Entity.EntityConstants.nameKey] as? String,
+        let bodyText = ckRecord[Entity.EntityConstants.bodyTextKey] as? String?,
+        let timestamp = ckRecord[Entity.EntityConstants.timestampKey] as? Date?,
+            let grouping = ckRecord[Entity.EntityConstants.groupingKey] as? String else {return nil}
         self.init(name: name, bodyText: bodyText, timestamp: timestamp, grouping: grouping, recordID: ckRecord.recordID)
     }
     

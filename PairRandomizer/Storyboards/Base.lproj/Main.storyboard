@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LjG-rU-wbL">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,58 +10,104 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Randomizer View Controller-->
         <scene sceneID="2Vk-sk-I9g">
             <objects>
-                <viewController id="LjG-rU-wbL" sceneMemberID="viewController">
+                <viewController id="LjG-rU-wbL" customClass="RandomizerViewController" customModule="PairRandomizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9vL-EP-j1L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create an Entity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ltm-8n-cVJ">
-                                <rect key="frame" x="8" y="60" width="398" height="30"/>
+                                <rect key="frame" x="0.0" y="53" width="414" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fB2-Ly-aqH">
-                                <rect key="frame" x="83" y="136" width="248" height="45"/>
+                                <rect key="frame" x="83" y="204" width="248" height="45"/>
                                 <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Randomize">
                                     <color key="titleColor" red="0.95349585137209258" green="1" blue="0.44197365611584261" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="randomizePairsButtonTapped:" destination="LjG-rU-wbL" eventType="touchUpInside" id="jFv-ua-WBS"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ANO-XT-VDz">
-                                <rect key="frame" x="0.0" y="252" width="414" height="538"/>
+                                <rect key="frame" x="0.0" y="297.5" width="414" height="537.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="184-JW-jLn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="entityCell" textLabel="B6q-52-3f2" detailTextLabel="fp3-Tk-oIG" style="IBUITableViewCellStyleValue1" id="184-JW-jLn">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="184-JW-jLn" id="FSo-5p-Z5E">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="B6q-52-3f2">
+                                                    <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fp3-Tk-oIG">
+                                                    <rect key="frame" x="350" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlH-OE-yAh">
+                                <rect key="frame" x="124" y="145" width="166" height="27"/>
+                                <color key="backgroundColor" red="0.4900711324" green="1" blue="0.37099186610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add Entity"/>
+                                <connections>
+                                    <action selector="addEntityButtonTapped:" destination="LjG-rU-wbL" eventType="touchUpInside" id="SBU-34-aDH"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Grouping?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Io3-KH-pVm">
+                                <rect key="frame" x="0.0" y="98.5" width="414" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fB2-Ly-aqH" firstAttribute="centerX" secondItem="NOr-mE-D0U" secondAttribute="centerX" id="1Fb-W1-B7a"/>
+                            <constraint firstItem="xlH-OE-yAh" firstAttribute="centerX" secondItem="NOr-mE-D0U" secondAttribute="centerX" id="3US-iG-XHd"/>
                             <constraint firstItem="fB2-Ly-aqH" firstAttribute="width" secondItem="9vL-EP-j1L" secondAttribute="width" multiplier="0.6" id="5DR-yP-bbz"/>
-                            <constraint firstItem="ANO-XT-VDz" firstAttribute="centerY" secondItem="NOr-mE-D0U" secondAttribute="centerY" multiplier="1.15" id="Atd-YG-bCf"/>
-                            <constraint firstItem="fB2-Ly-aqH" firstAttribute="centerY" secondItem="NOr-mE-D0U" secondAttribute="centerY" multiplier="0.35" id="D3H-dS-jqu"/>
-                            <constraint firstItem="NOr-mE-D0U" firstAttribute="trailing" secondItem="Ltm-8n-cVJ" secondAttribute="trailing" constant="8" id="GAu-C9-qUR"/>
+                            <constraint firstItem="ANO-XT-VDz" firstAttribute="centerY" secondItem="NOr-mE-D0U" secondAttribute="centerY" multiplier="1.25" id="Atd-YG-bCf"/>
+                            <constraint firstItem="fB2-Ly-aqH" firstAttribute="centerY" secondItem="NOr-mE-D0U" secondAttribute="centerY" multiplier="0.5" id="D3H-dS-jqu"/>
+                            <constraint firstItem="Ltm-8n-cVJ" firstAttribute="centerX" secondItem="NOr-mE-D0U" secondAttribute="centerX" id="Kwj-Ia-t3I"/>
+                            <constraint firstItem="xlH-OE-yAh" firstAttribute="width" secondItem="9vL-EP-j1L" secondAttribute="width" multiplier="0.4" id="Ox7-4r-jXn"/>
+                            <constraint firstItem="xlH-OE-yAh" firstAttribute="height" secondItem="9vL-EP-j1L" secondAttribute="height" multiplier="0.03" id="P4b-ze-PDa"/>
+                            <constraint firstItem="Io3-KH-pVm" firstAttribute="centerY" secondItem="NOr-mE-D0U" secondAttribute="centerY" multiplier="0.25" id="VJU-I1-Jk2"/>
+                            <constraint firstItem="Ltm-8n-cVJ" firstAttribute="centerY" secondItem="NOr-mE-D0U" secondAttribute="centerY" multiplier="0.15" id="aFP-YI-d4O"/>
                             <constraint firstItem="ANO-XT-VDz" firstAttribute="width" secondItem="9vL-EP-j1L" secondAttribute="width" id="b19-Me-gPX"/>
+                            <constraint firstItem="Ltm-8n-cVJ" firstAttribute="width" secondItem="9vL-EP-j1L" secondAttribute="width" id="kTS-4b-6dJ"/>
                             <constraint firstItem="fB2-Ly-aqH" firstAttribute="height" secondItem="9vL-EP-j1L" secondAttribute="height" multiplier="0.05" id="la8-zc-zLT"/>
+                            <constraint firstItem="Io3-KH-pVm" firstAttribute="centerX" secondItem="NOr-mE-D0U" secondAttribute="centerX" id="mPD-On-Krg"/>
+                            <constraint firstItem="xlH-OE-yAh" firstAttribute="centerY" secondItem="NOr-mE-D0U" secondAttribute="centerY" multiplier="0.35" id="mwS-wb-n4E"/>
                             <constraint firstItem="ANO-XT-VDz" firstAttribute="centerX" secondItem="NOr-mE-D0U" secondAttribute="centerX" id="pVd-p3-dYX"/>
                             <constraint firstItem="ANO-XT-VDz" firstAttribute="height" secondItem="9vL-EP-j1L" secondAttribute="height" multiplier="0.6" id="qgg-1m-gj2"/>
-                            <constraint firstItem="Ltm-8n-cVJ" firstAttribute="leading" secondItem="NOr-mE-D0U" secondAttribute="leading" constant="8" id="vtf-gG-pth"/>
-                            <constraint firstItem="Ltm-8n-cVJ" firstAttribute="top" secondItem="NOr-mE-D0U" secondAttribute="top" constant="16" id="xxt-ZF-aZT"/>
+                            <constraint firstItem="Io3-KH-pVm" firstAttribute="width" secondItem="9vL-EP-j1L" secondAttribute="width" id="rUr-8z-u5Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NOr-mE-D0U"/>
                     </view>
+                    <connections>
+                        <outlet property="createAnEntityTextField" destination="Ltm-8n-cVJ" id="mHD-rt-JhD"/>
+                        <outlet property="entityTableView" destination="ANO-XT-VDz" id="uTY-wr-iMt"/>
+                        <outlet property="groupingTextField" destination="Io3-KH-pVm" id="ZeS-k8-S64"/>
+                        <outlet property="randomizePairsButton" destination="fB2-Ly-aqH" id="7g5-q0-dzB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGe-mS-U7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
