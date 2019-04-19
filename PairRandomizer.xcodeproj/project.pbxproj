@@ -8,20 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		F7442153226A1AF700546C1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442152226A1AF700546C1F /* AppDelegate.swift */; };
-		F7442155226A1AF700546C1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442154226A1AF700546C1F /* ViewController.swift */; };
 		F7442158226A1AF700546C1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7442156226A1AF700546C1F /* Main.storyboard */; };
 		F744215A226A1AF900546C1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7442159226A1AF900546C1F /* Assets.xcassets */; };
 		F744215D226A1AF900546C1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F744215B226A1AF900546C1F /* LaunchScreen.storyboard */; };
+		F7442165226A1B9B00546C1F /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442164226A1B9B00546C1F /* Notes.swift */; };
+		F7442167226A1CC100546C1F /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442166226A1CC100546C1F /* Entity.swift */; };
+		F744216C226A1CEA00546C1F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F744216B226A1CEA00546C1F /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F744214F226A1AF700546C1F /* PairRandomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PairRandomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7442152226A1AF700546C1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F7442154226A1AF700546C1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F7442157226A1AF700546C1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F7442159226A1AF900546C1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F744215C226A1AF900546C1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F744215E226A1AF900546C1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7442164226A1B9B00546C1F /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		F7442166226A1CC100546C1F /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		F7442169226A1CE700546C1F /* PairRandomizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PairRandomizer.entitlements; sourceTree = "<group>"; };
+		F744216B226A1CEA00546C1F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F744216C226A1CEA00546C1F /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +46,7 @@
 			children = (
 				F7442151226A1AF700546C1F /* PairRandomizer */,
 				F7442150226A1AF700546C1F /* Products */,
+				F744216A226A1CEA00546C1F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +61,48 @@
 		F7442151226A1AF700546C1F /* PairRandomizer */ = {
 			isa = PBXGroup;
 			children = (
+				F744216D226A1D1100546C1F /* Resources */,
+				F744216E226A1D3300546C1F /* Storyboards */,
+				F7442168226A1CC700546C1F /* Model */,
+			);
+			path = PairRandomizer;
+			sourceTree = "<group>";
+		};
+		F7442168226A1CC700546C1F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F7442166226A1CC100546C1F /* Entity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F744216A226A1CEA00546C1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F744216B226A1CEA00546C1F /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F744216D226A1D1100546C1F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F7442169226A1CE700546C1F /* PairRandomizer.entitlements */,
 				F7442152226A1AF700546C1F /* AppDelegate.swift */,
-				F7442154226A1AF700546C1F /* ViewController.swift */,
-				F7442156226A1AF700546C1F /* Main.storyboard */,
 				F7442159226A1AF900546C1F /* Assets.xcassets */,
 				F744215B226A1AF900546C1F /* LaunchScreen.storyboard */,
 				F744215E226A1AF900546C1F /* Info.plist */,
+				F7442164226A1B9B00546C1F /* Notes.swift */,
 			);
-			path = PairRandomizer;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F744216E226A1D3300546C1F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F7442156226A1AF700546C1F /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +137,14 @@
 				TargetAttributes = {
 					F744214E226A1AF700546C1F = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,8 +184,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7442155226A1AF700546C1F /* ViewController.swift in Sources */,
 				F7442153226A1AF700546C1F /* AppDelegate.swift in Sources */,
+				F7442165226A1B9B00546C1F /* Notes.swift in Sources */,
+				F7442167226A1CC100546C1F /* Entity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,9 +332,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PairRandomizer/PairRandomizer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q89A379BUF;
-				INFOPLIST_FILE = PairRandomizer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PairRandomizer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,9 +351,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PairRandomizer/PairRandomizer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q89A379BUF;
-				INFOPLIST_FILE = PairRandomizer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PairRandomizer/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
