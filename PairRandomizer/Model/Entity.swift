@@ -16,10 +16,10 @@ class Entity {
     let name: String
     let bodyText: String?
     let timestamp: Date?
-    let grouping: String?
+    let grouping: String
     let recordID: CKRecord.ID
     
-    init(name: String, bodyText: String? = nil, timestamp: Date? = nil, grouping: String? = nil, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)) {
+    init(name: String, bodyText: String? = nil, timestamp: Date? = nil, grouping: String, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)) {
         self.name = name
         self.bodyText = bodyText
         self.timestamp = timestamp

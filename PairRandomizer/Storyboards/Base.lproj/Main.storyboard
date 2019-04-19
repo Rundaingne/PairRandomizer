@@ -17,13 +17,55 @@
                     <view key="view" contentMode="scaleToFill" id="9vL-EP-j1L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create an Entity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ltm-8n-cVJ">
+                                <rect key="frame" x="8" y="60" width="398" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fB2-Ly-aqH">
+                                <rect key="frame" x="83" y="136" width="248" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Randomize">
+                                    <color key="titleColor" red="0.95349585137209258" green="1" blue="0.44197365611584261" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ANO-XT-VDz">
+                                <rect key="frame" x="0.0" y="252" width="414" height="538"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="184-JW-jLn">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="184-JW-jLn" id="FSo-5p-Z5E">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fB2-Ly-aqH" firstAttribute="centerX" secondItem="NOr-mE-D0U" secondAttribute="centerX" id="1Fb-W1-B7a"/>
+                            <constraint firstItem="fB2-Ly-aqH" firstAttribute="width" secondItem="9vL-EP-j1L" secondAttribute="width" multiplier="0.6" id="5DR-yP-bbz"/>
+                            <constraint firstItem="ANO-XT-VDz" firstAttribute="centerY" secondItem="NOr-mE-D0U" secondAttribute="centerY" multiplier="1.15" id="Atd-YG-bCf"/>
+                            <constraint firstItem="fB2-Ly-aqH" firstAttribute="centerY" secondItem="NOr-mE-D0U" secondAttribute="centerY" multiplier="0.35" id="D3H-dS-jqu"/>
+                            <constraint firstItem="NOr-mE-D0U" firstAttribute="trailing" secondItem="Ltm-8n-cVJ" secondAttribute="trailing" constant="8" id="GAu-C9-qUR"/>
+                            <constraint firstItem="ANO-XT-VDz" firstAttribute="width" secondItem="9vL-EP-j1L" secondAttribute="width" id="b19-Me-gPX"/>
+                            <constraint firstItem="fB2-Ly-aqH" firstAttribute="height" secondItem="9vL-EP-j1L" secondAttribute="height" multiplier="0.05" id="la8-zc-zLT"/>
+                            <constraint firstItem="ANO-XT-VDz" firstAttribute="centerX" secondItem="NOr-mE-D0U" secondAttribute="centerX" id="pVd-p3-dYX"/>
+                            <constraint firstItem="ANO-XT-VDz" firstAttribute="height" secondItem="9vL-EP-j1L" secondAttribute="height" multiplier="0.6" id="qgg-1m-gj2"/>
+                            <constraint firstItem="Ltm-8n-cVJ" firstAttribute="leading" secondItem="NOr-mE-D0U" secondAttribute="leading" constant="8" id="vtf-gG-pth"/>
+                            <constraint firstItem="Ltm-8n-cVJ" firstAttribute="top" secondItem="NOr-mE-D0U" secondAttribute="top" constant="16" id="xxt-ZF-aZT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NOr-mE-D0U"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGe-mS-U7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-293" y="196"/>
+            <point key="canvasLocation" x="-294.20289855072468" y="195.53571428571428"/>
         </scene>
     </scenes>
 </document>

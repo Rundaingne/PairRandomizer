@@ -14,6 +14,7 @@
 		F7442165226A1B9B00546C1F /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442164226A1B9B00546C1F /* Notes.swift */; };
 		F7442167226A1CC100546C1F /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442166226A1CC100546C1F /* Entity.swift */; };
 		F744216C226A1CEA00546C1F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F744216B226A1CEA00546C1F /* CloudKit.framework */; };
+		F7442173226A20A100546C1F /* EntityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442172226A20A100546C1F /* EntityController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		F7442166226A1CC100546C1F /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		F7442169226A1CE700546C1F /* PairRandomizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PairRandomizer.entitlements; sourceTree = "<group>"; };
 		F744216B226A1CEA00546C1F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		F7442172226A20A100546C1F /* EntityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		F7442151226A1AF700546C1F /* PairRandomizer */ = {
 			isa = PBXGroup;
 			children = (
+				F7442170226A209200546C1F /* Controllers */,
 				F744216D226A1D1100546C1F /* Resources */,
 				F744216E226A1D3300546C1F /* Storyboards */,
 				F7442168226A1CC700546C1F /* Model */,
@@ -103,6 +106,30 @@
 				F7442156226A1AF700546C1F /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F7442170226A209200546C1F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F7442174226A251A00546C1F /* View Controllers */,
+				F7442171226A209700546C1F /* Model Controller */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F7442171226A209700546C1F /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F7442172226A20A100546C1F /* EntityController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		F7442174226A251A00546C1F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +213,7 @@
 			files = (
 				F7442153226A1AF700546C1F /* AppDelegate.swift in Sources */,
 				F7442165226A1B9B00546C1F /* Notes.swift in Sources */,
+				F7442173226A20A100546C1F /* EntityController.swift in Sources */,
 				F7442167226A1CC100546C1F /* Entity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
