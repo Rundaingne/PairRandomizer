@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RandomizerViewController: UIViewController, UITableViewDataSource {
+class RandomizerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //MARK: -IBOutlets
     @IBOutlet weak var entityTableView: UITableView!
@@ -18,10 +18,12 @@ class RandomizerViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        entityTableView.register(UITableViewCell.self, forCellReuseIdentifier: "entityCell")
         entityTableView.dataSource = self
+        entityTableView.delegate = self
         EntityController.shared.fetchEntities { (entities) in
             DispatchQueue.main.async {
+                guard let entities = entities else {return}
+                self.group(entities: entities)
                 self.entityTableView.reloadData()
             }
         }
@@ -37,6 +39,7 @@ class RandomizerViewController: UIViewController, UITableViewDataSource {
         let entity = EntityController.shared.entities[indexPath.row]
         cell?.textLabel?.text = entity.name
         cell?.detailTextLabel?.text = entity.grouping
+        //WHY IS THE CELL DETAIL TEXT LABEL NIL
         return cell ?? UITableViewCell()
     }
     
@@ -52,10 +55,15 @@ class RandomizerViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    //MARK: -Methods
+    func group(entities: [Entity]) {
+        let newEntities = entities.sorted(by: {$0.grouping > $1.grouping})
+        EntityController.shared.entities = newEntities
+    }
+    
     //MARK: -Actions
     
     @IBAction func addEntityButtonTapped(_ sender: UIButton) {
-        
         //When this button gets tapped, we need to create an entity.
         guard let name = createAnEntityTextField.text, !name.isEmpty,
             let grouping = groupingTextField.text, !grouping.isEmpty else {return}
@@ -64,16 +72,19 @@ class RandomizerViewController: UIViewController, UITableViewDataSource {
                 self.entityTableView.reloadData()
             }
         }
-        
     }
     
     
     @IBAction func randomizePairsButtonTapped(_ sender: UIButton) {
-        
         //FINALLY. When I tap this button, what needs to happen? Hmmm...well, the tableView needs to reload, and the names need to be scrambled. I'll claim this as for SecretSanta. I could add an enum switch feature later for a pairing use. But one thing at a time; that debug took bloody eternity.
         EntityController.shared.entities.shuffle()
         entityTableView.reloadData()
-        
+        let entities = EntityController.shared.entities
+        for entity in entities {
+            //For each entity, I want to shuffle it's name and grouping.
+            let originalName = entity.name
+            entity.name = entity.grouping
+            entity.grouping = originalName
+        }
     }
-    
 }

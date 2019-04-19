@@ -13,10 +13,10 @@ import CloudKit
 
 class Entity {
     
-    let name: String
+    var name: String
     let bodyText: String?
     let timestamp: Date?
-    let grouping: String
+    var grouping: String
     let recordID: CKRecord.ID
     
     init(name: String, bodyText: String? = nil, timestamp: Date? = nil, grouping: String, recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)) {

@@ -64,7 +64,7 @@ class EntityController {
             }
             DispatchQueue.main.async {
                 guard let records = records else {completion(nil); return}
-                let entities = records.compactMap{Entity(ckRecord: $0)}
+                var entities = records.compactMap{Entity(ckRecord: $0)}
                 self.entities = entities
                 completion(entities)
             }
