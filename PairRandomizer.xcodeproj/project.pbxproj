@@ -16,6 +16,8 @@
 		F744216C226A1CEA00546C1F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F744216B226A1CEA00546C1F /* CloudKit.framework */; };
 		F7442173226A20A100546C1F /* EntityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442172226A20A100546C1F /* EntityController.swift */; };
 		F7442176226A276E00546C1F /* RandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7442175226A276E00546C1F /* RandomizerViewController.swift */; };
+		F755A9A2226A4A9B0040851C /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F755A9A1226A4A9B0040851C /* StyleGuide.swift */; };
+		F755A9A4226A4ABD0040851C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F755A9A3226A4ABD0040851C /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		F744216B226A1CEA00546C1F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		F7442172226A20A100546C1F /* EntityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityController.swift; sourceTree = "<group>"; };
 		F7442175226A276E00546C1F /* RandomizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerViewController.swift; sourceTree = "<group>"; };
+		F755A9A1226A4A9B0040851C /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
+		F755A9A3226A4ABD0040851C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				F744215B226A1AF900546C1F /* LaunchScreen.storyboard */,
 				F744215E226A1AF900546C1F /* Info.plist */,
 				F7442164226A1B9B00546C1F /* Notes.swift */,
+				F755A9A1226A4A9B0040851C /* StyleGuide.swift */,
+				F755A9A3226A4ABD0040851C /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -202,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F744215D226A1AF900546C1F /* LaunchScreen.storyboard in Resources */,
+				F755A9A4226A4ABD0040851C /* Colors.xcassets in Resources */,
 				F744215A226A1AF900546C1F /* Assets.xcassets in Resources */,
 				F7442158226A1AF700546C1F /* Main.storyboard in Resources */,
 			);
@@ -216,6 +223,7 @@
 			files = (
 				F7442153226A1AF700546C1F /* AppDelegate.swift in Sources */,
 				F7442176226A276E00546C1F /* RandomizerViewController.swift in Sources */,
+				F755A9A2226A4A9B0040851C /* StyleGuide.swift in Sources */,
 				F7442165226A1B9B00546C1F /* Notes.swift in Sources */,
 				F7442173226A20A100546C1F /* EntityController.swift in Sources */,
 				F7442167226A1CC100546C1F /* Entity.swift in Sources */,

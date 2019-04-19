@@ -103,6 +103,7 @@
                         <viewLayoutGuide key="safeArea" id="NOr-mE-D0U"/>
                     </view>
                     <connections>
+                        <outlet property="addEntryButton" destination="xlH-OE-yAh" id="qIo-yZ-MTy"/>
                         <outlet property="createAnEntityTextField" destination="Ltm-8n-cVJ" id="mHD-rt-JhD"/>
                         <outlet property="entityTableView" destination="ANO-XT-VDz" id="uTY-wr-iMt"/>
                         <outlet property="groupingTextField" destination="Io3-KH-pVm" id="ZeS-k8-S64"/>

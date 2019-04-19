@@ -15,9 +15,11 @@ class RandomizerViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var createAnEntityTextField: UITextField!
     @IBOutlet weak var randomizePairsButton: UIButton!
     @IBOutlet weak var groupingTextField: UITextField!
+    @IBOutlet weak var addEntryButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
         entityTableView.dataSource = self
         entityTableView.delegate = self
         EntityController.shared.fetchEntities { (entities) in
@@ -59,6 +61,20 @@ class RandomizerViewController: UIViewController, UITableViewDataSource, UITable
     func group(entities: [Entity]) {
         let newEntities = entities.sorted(by: {$0.grouping > $1.grouping})
         EntityController.shared.entities = newEntities
+    }
+    
+    func updateViews() {
+        randomizePairsButton.backgroundColor = UIColor.blue
+        randomizePairsButton.addCornerRadius()
+        randomizePairsButton.addAccentBorder(color: .yellow)
+        addEntryButton.setTitleColor(.white, for: .normal)
+        addEntryButton.backgroundColor = .blue
+        addEntryButton.setTitleColor(.white, for: .normal)
+        addEntryButton.addCornerRadius()
+        addEntryButton.addAccentBorder(color: .yellow)
+        view.backgroundColor = .spaceGray
+        entityTableView.backgroundColor = .spaceGray
+        
     }
     
     //MARK: -Actions
